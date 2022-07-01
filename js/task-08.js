@@ -13,8 +13,7 @@
 
 const loginForm = document.querySelector(".login-form");
 const loginBtnSabmit = document.querySelector("button");
-const email = document.querySelector('input[type="email"]');
-const password = document.querySelector('input[type="password"]');
+
 
 let user = {
     email: '',
@@ -23,7 +22,9 @@ let user = {
 
 loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-             
+     const {
+    elements: { email, password }
+  } = event.currentTarget;         
 
     if (email.value === "" || password.value === "") {
        return alert("Please fill in all the fields!");
